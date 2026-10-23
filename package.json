@@ -1,0 +1,36 @@
+{
+  "name": "sinal-libras",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "test": "node --import tsx --test --test-isolation=none src/domain/*.test.ts",
+    "preview": "vite preview --host 0.0.0.0",
+    "check": "npm run check:architecture && tsc --noEmit",
+    "check:architecture": "node scripts/check_architecture.mjs",
+    "format": "prettier --write src scripts/check_architecture.mjs docs README.md package.json tsconfig.json vite.config.ts",
+    "format:check": "prettier --check src scripts/check_architecture.mjs docs README.md package.json tsconfig.json vite.config.ts"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "0.10.32",
+    "lucide-react": "^0.468.0",
+    "onnxruntime-web": "^1.23.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}

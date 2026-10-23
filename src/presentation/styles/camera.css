@@ -1,0 +1,408 @@
+.camera-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid #dbe2d3;
+  background: white;
+  min-width: 0;
+}
+.camera-view {
+  height: 420px;
+  background-color: #e5e9de;
+  background-image: radial-gradient(#9aa98a24 1px, transparent 1px);
+  background-size: 19px 19px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.camera-view--active {
+  background: #17251c;
+}
+.camera-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 17px;
+  z-index: 5;
+}
+.camera-status {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 7px 9px;
+  background: #f7f9f2c7;
+  border: 1px solid #d7dfcd80;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #728069;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+.camera-status > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #9ea88f;
+}
+.camera-status--on > span {
+  background: #688749;
+  box-shadow: 0 0 0 3px #90a16c21;
+}
+.camera-mode {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #748364;
+  font-weight: 500;
+  text-align: right;
+}
+.camera-placeholder {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 40px 20px 26px;
+  text-align: center;
+}
+.hand-stage {
+  width: 220px;
+  height: 192px;
+  position: relative;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hand-stage .hand-illustration {
+  width: 149px;
+  height: 190px;
+  position: relative;
+  z-index: 1;
+  filter: saturate(0.65);
+  transform: rotate(9deg);
+}
+.stage-orbit {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 1px solid #a2b18c40;
+  border-radius: 50%;
+  top: 6px;
+}
+.stage-orbit--two {
+  width: 209px;
+  height: 209px;
+  top: -14px;
+  border-style: dashed;
+  border-color: #a2b18c30;
+  transform: rotate(24deg);
+}
+.stage-spark {
+  position: absolute;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  color: #8d9f74;
+  z-index: 2;
+}
+.stage-spark--one {
+  left: 8px;
+  top: 40px;
+}
+.stage-spark--two {
+  right: 7px;
+  top: 100px;
+  font-size: 17px;
+  color: #b2b898;
+}
+.hand-badge {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid #e1e7d8;
+  border-radius: 5px;
+  background: #f6f8efed;
+  color: #748364;
+  font-size: 9px;
+  box-shadow: 0 4px 13px #62734806;
+  z-index: 2;
+  transform: rotate(-5deg);
+}
+.hand-badge svg {
+  color: #889f6e;
+}
+.camera-placeholder h2 {
+  font-size: 20px;
+  font-weight: 550;
+  color: #475c3f;
+  letter-spacing: -0.65px;
+  margin-bottom: 8px;
+}
+.camera-placeholder p {
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #677b59;
+  min-height: 35px;
+}
+.camera-placeholder .button {
+  margin-top: 18px;
+  padding: 12px 17px;
+  min-height: 40px;
+  font-size: 13px;
+  border-radius: 7px;
+}
+.camera-placeholder .button > svg:last-child {
+  margin-left: 10px;
+}
+.button {
+  min-height: 39px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.3;
+  border: 1px solid transparent;
+}
+.button--primary {
+  background: var(--color-brand);
+  color: #f5f7ed;
+  border-color: var(--color-brand);
+  box-shadow: 0 2px 3px #193c2710;
+}
+.button--primary:not(:disabled):hover {
+  background: #173c2c;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px #193c2712;
+}
+.button--secondary {
+  background: #fff;
+  border-color: var(--color-border);
+  color: #586a4f;
+}
+.button--secondary:not(:disabled):hover {
+  background: #f0f4e8;
+  border-color: #c8d4b7;
+}
+.button--ghost {
+  color: #5c7251;
+}
+.button--ghost:not(:disabled):hover {
+  background: #eaf0e2;
+}
+.icon-button {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+.icon-button:not(:disabled):hover {
+  background: #e8eedf;
+}
+.camera-controls {
+  display: flex;
+  align-items: center;
+  height: 53px;
+  padding: 0 17px;
+  gap: 16px;
+  font-size: 11px;
+  color: #78836e;
+  background: #fcfdf9;
+}
+.compact-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  min-height: 36px;
+}
+.compact-toggle input {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 24px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.compact-toggle:focus-within {
+  outline: 2px solid #b0775d;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+.compact-toggle input:checked + .mini-switch {
+  background: #506e3d;
+}
+.compact-toggle input:checked + .mini-switch::before {
+  transform: translateX(9px);
+}
+.mini-switch {
+  width: 24px;
+  height: 14px;
+  background: #cbd3bf;
+  border-radius: 20px;
+  display: block;
+  position: relative;
+  margin-right: 2px;
+  transition: background 0.15s;
+}
+.mini-switch::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+.control-divider {
+  width: 1px;
+  height: 15px;
+  background: #e0e5d7;
+}
+.mirror-button {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 11px;
+  color: #a0a795;
+}
+.mirror-button--active {
+  color: #657c50;
+}
+.mirror-button:hover {
+  color: #2f4f35;
+}
+.camera-settings {
+  margin-left: auto;
+  color: #859378;
+}
+.camera-video,
+.landmark-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.landmark-overlay {
+  pointer-events: none;
+  z-index: 2;
+}
+.is-mirrored {
+  transform: scaleX(-1);
+}
+.capture-frame {
+  position: absolute;
+  inset: 85px 22%;
+  pointer-events: none;
+  z-index: 1;
+}
+.capture-frame i {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: #d5e5bf99;
+  border-style: solid;
+  border-width: 0;
+}
+.capture-frame i:nth-child(1) {
+  left: 0;
+  top: 0;
+  border-left-width: 2px;
+  border-top-width: 2px;
+  border-radius: 8px 0 0 0;
+}
+.capture-frame i:nth-child(2) {
+  right: 0;
+  top: 0;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  border-radius: 0 8px 0 0;
+}
+.capture-frame i:nth-child(3) {
+  left: 0;
+  bottom: 0;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: 0 0 0 8px;
+}
+.capture-frame i:nth-child(4) {
+  right: 0;
+  bottom: 0;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-radius: 0 0 8px 0;
+}
+.live-message {
+  position: absolute;
+  bottom: 67px;
+  left: 12%;
+  right: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-align: center;
+  background: #183624b8;
+  backdrop-filter: blur(8px);
+  border: 1px solid #758f6130;
+  color: #e1edcd;
+  border-radius: 7px;
+  padding: 10px;
+  font-size: 12px;
+  z-index: 3;
+}
+.stop-camera {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #fffef0e8;
+  border-radius: 6px;
+  padding: 9px 12px;
+  font-size: 11px;
+  z-index: 4;
+  white-space: nowrap;
+}
+.live-message--confirmed {
+  background: #244b3bed;
+  border-color: #c5dbab;
+  color: #f5ffe9;
+  font-size: 19px;
+  padding: 14px 16px;
+  box-shadow: 0 3px 20px #132e2830;
+}
+.live-message--confirmed strong {
+  font-weight: 550;
+}
+.camera-view--active .camera-mode {
+  color: #edf4df;
+  text-shadow: 0 1px 2px #000;
+}

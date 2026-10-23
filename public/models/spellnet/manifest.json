@@ -1,0 +1,47 @@
+{
+  "name": "SpellNet Libras",
+  "version": "spellnet-onnx-v1",
+  "source": "https://huggingface.co/RAIA-BRASIL/spellnet_libras",
+  "sourceCode": "https://github.com/gruporaia/SpellNet",
+  "authors": "RAIA / SignLink",
+  "labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "Y"
+  ],
+  "input": {
+    "shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "layout": "NHWC",
+    "channels": "BGR",
+    "normalization": "pixel / 127.5 - 1",
+    "cropPaddingPixels": 100,
+    "landmarks": "red points and green connections at 224px"
+  },
+  "sourceSha256": "4f1d9e2ade1a696d1e2de60db425f5cfdefa94eaf5ef208b02fceefbaf35085b",
+  "onnxSha256": "8bebda4fe7b3bc2e9259d8fa4f5bdafe8e0646069018701da7923c48708e8df1",
+  "conversionMaxAbsoluteError": 4.320099833421409e-09,
+  "limitations": "21 static classes; no H, J, K, X, Z. Softmax is not calibrated confidence. License not explicitly specified upstream. No independent quality validation."
+}

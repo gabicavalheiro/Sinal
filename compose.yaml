@@ -1,0 +1,85 @@
+name: sinal
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Defina MYSQL_ROOT_PASSWORD no .env}
+      MYSQL_DATABASE: sinal_practice
+      MYSQL_USER: sinal_practice_app
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Defina MYSQL_PASSWORD no .env}
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./services/practice/schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'mysqladmin ping -h localhost -u root -p"$$MYSQL_ROOT_PASSWORD" --silent',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Defina MSSQL_SA_PASSWORD no .env}
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          '/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "$$MSSQL_SA_PASSWORD" -C -Q ''SELECT 1'' -b -o /dev/null',
+        ]
+      start_period: 30s
+      interval: 10s
+      timeout: 5s
+      retries: 20
+  sqlserver-init:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      SQLCMDPASSWORD: ${MSSQL_SA_PASSWORD:?Defina MSSQL_SA_PASSWORD no .env}
+      SQLSERVER_APP_PASSWORD: ${SQLSERVER_APP_PASSWORD:?Defina SQLSERVER_APP_PASSWORD no .env}
+    volumes:
+      - ./services/training/schema.sql:/schema.sql:ro
+    # Login is provisioned by the setup helper; app never uses sa.
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        set -euo pipefail
+        if ! [[ "$$SQLSERVER_APP_PASSWORD" =~ ^[A-Za-z0-9_@!%-]{12,128}$$ ]]; then
+          echo 'SQLSERVER_APP_PASSWORD: use 12–128 caracteres dentre A–Z, a–z, 0–9, _ @ ! % -'; exit 1;
+        fi
+        printf "IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = 'sinal_training_app') CREATE LOGIN sinal_training_app WITH PASSWORD = '%s';\n" "$$SQLSERVER_APP_PASSWORD" | /opt/mssql-tools18/bin/sqlcmd -S sqlserver -U sa -C -b
+        /opt/mssql-tools18/bin/sqlcmd -S sqlserver -U sa -C -b -i /schema.sql
+    restart: "no"
+  practice:
+    build: ./services/practice
+    ports: ["127.0.0.1:8001:8000"]
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: sinal_practice
+      MYSQL_USER: sinal_practice_app
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Defina MYSQL_PASSWORD no .env}
+    depends_on:
+      mysql:
+        condition: service_healthy
+  training:
+    build: ./services/training
+    ports: ["127.0.0.1:8002:8000"]
+    environment:
+      SQLSERVER_HOST: sqlserver
+      SQLSERVER_DATABASE: sinal_training
+      SQLSERVER_USER: sinal_training_app
+      SQLSERVER_PASSWORD: ${SQLSERVER_APP_PASSWORD:?Defina SQLSERVER_APP_PASSWORD no .env}
+    depends_on:
+      sqlserver-init:
+        condition: service_completed_successfully
+volumes:
+  mysql-data:
+  sqlserver-data:

@@ -1,0 +1,12 @@
+{
+  "project": "Sinal",
+  "commit": "47a6380e488536b42beb15757301cc95fa7f18f3",
+  "verification": {
+    "typescriptTests": 6,
+    "pythonTests": 18,
+    "architecture": "passed",
+    "browser": "A, B, hand loss, navigation, storage, export, keyboard and responsive layout"
+  },
+  "dependencies": "Install with npm ci and requirements-dev.txt.",
+  "databases": "Development configuration; no database data included."
+}

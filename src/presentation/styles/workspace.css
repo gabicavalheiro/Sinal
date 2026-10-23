@@ -1,0 +1,111 @@
+main {
+  max-width: 1450px;
+  padding: 41px 40px 0;
+  margin: 0 auto;
+}
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 33px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7b876c;
+  font-size: 11px;
+  letter-spacing: 1.45px;
+  font-weight: 600;
+}
+.eyebrow > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a6b48b;
+}
+.page-heading h1 {
+  font-size: clamp(38px, 3.5vw, 51px);
+  line-height: 1.13;
+  letter-spacing: -2px;
+  font-weight: 550;
+  margin: 17px 0 15px;
+}
+.page-heading em {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.19em;
+  line-height: 0.98;
+  color: #42624d;
+  letter-spacing: -1.4px;
+}
+.page-heading > div > p {
+  color: #6e7865;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.heading-decoration {
+  margin-right: 29px;
+  margin-top: 13px;
+  width: 124px;
+  height: 110px;
+  color: #a8ad91;
+  transform: rotate(-9deg);
+}
+.heading-decoration span {
+  display: block;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 23px;
+  line-height: 0.95;
+  text-align: center;
+}
+.heading-decoration svg {
+  width: 75px;
+  margin-left: 36px;
+  margin-top: 6px;
+}
+.workspace-tabs {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 19px;
+  border-bottom: 1px solid var(--color-border);
+}
+.workspace-tabs > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6c785f;
+  padding: 2px 13px 16px;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-weight: 500;
+}
+.workspace-tabs > button:first-child {
+  padding-left: 2px;
+  padding-right: 19px;
+}
+.workspace-tabs > button[aria-selected="true"] {
+  color: #35523a;
+  border-color: #35523a;
+  font-weight: 650;
+}
+.workspace-tabs > button:hover {
+  color: #35523a;
+}
+.workspace-caption {
+  margin-left: auto;
+  padding-bottom: 14px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: #6c785f;
+  font-size: 11px;
+}
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(275px, 1fr);
+  gap: 20px;
+}

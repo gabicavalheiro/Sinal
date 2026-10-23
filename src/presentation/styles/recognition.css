@@ -1,0 +1,156 @@
+.demo-stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 53px 25px 15px;
+}
+.demo-stage > .hand-illustration {
+  width: 200px;
+  height: 245px;
+  position: relative;
+  z-index: 1;
+  filter: saturate(0.65);
+  animation: gesture-in 0.4s ease-out;
+}
+.demo-guide-corners {
+  width: 200px;
+  height: 230px;
+  position: absolute;
+  top: 8px;
+  border: 1px dashed #91a4775c;
+  border-radius: 45% 45% 24% 24%;
+}
+.demo-letter-floating {
+  position: absolute;
+  right: 15%;
+  top: 27%;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 80px;
+  color: #b1bc9b;
+}
+.demo-stage > p {
+  font-size: 13px;
+  color: #768964;
+  margin-top: 8px;
+}
+.demo-step {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  color: #8c9b78;
+  margin-top: 4px;
+}
+.demo-exit {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #8c997a;
+  font-size: 10px;
+  margin-top: 8px;
+}
+.add-letter {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  color: #718663;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: #f3f6ec;
+  margin-top: 9px;
+}
+.add-letter kbd {
+  background: #e7eddd;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+.camera-view--demo + .camera-controls {
+  background: #f7f9f1;
+}
+.recognition-area:has(.add-letter) {
+  padding-top: 18px;
+  padding-bottom: 13px;
+}
+.practice-card > .micro-label {
+  display: block;
+  text-align: center;
+  margin-top: 25px;
+}
+.practice-letter {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 90px;
+  color: #42613d;
+  line-height: 1.2;
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  margin: 6px auto;
+}
+.practice-check {
+  position: absolute;
+  top: 12px;
+  right: -25px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #e9f1dd;
+  color: #68884c;
+  height: 26px;
+  width: 26px;
+  display: flex;
+}
+.practice-card > h3 {
+  font-size: 15px;
+  text-align: center;
+  margin: 4px 0 9px;
+  font-weight: 550;
+}
+.practice-card > p {
+  color: #949e85;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.8;
+  min-height: 53px;
+}
+.practice-manual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #758365;
+  font-size: 10px;
+  margin: 17px 0 12px;
+}
+.practice-card > .button {
+  width: 100%;
+  font-size: 12px;
+}
+.practice-skip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #89977b;
+  padding: 12px 0;
+  width: 100%;
+}
+.practice-progress {
+  border-top: 1px solid #e9eddf;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  padding-top: 13px;
+  font-size: 10px;
+  color: #849474;
+}
+.practice-progress > span:last-child {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #788369;
+}

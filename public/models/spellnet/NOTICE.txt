@@ -1,0 +1,8 @@
+SpellNet Libras — conversão ONNX para inferência local.
+Autoria original: RAIA / SignLink.
+Origem: https://huggingface.co/RAIA-BRASIL/spellnet_libras
+Código de referência: https://github.com/gruporaia/SpellNet
+Arquivo original: mobilenet_dani_libras_aug_heavy.keras
+Este arquivo ONNX é uma conversão do modelo, não um treinamento autoral do Sinal.
+Não foi localizada licença explícita do modelo na versão consultada; nenhuma licença é presumida neste aviso.
+As informações de origem, limites e checksums estão em manifest.json.

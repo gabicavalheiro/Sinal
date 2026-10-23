@@ -1,0 +1,741 @@
+@media (min-width: 1550px) {
+  .sidebar {
+    width: 245px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .main-shell {
+    margin-left: 245px;
+  }
+  main {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .topbar {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .camera-view {
+    height: 460px;
+  }
+  .camera-placeholder {
+    padding-bottom: 35px;
+  }
+  .hand-stage {
+    height: 215px;
+    margin-bottom: 14px;
+  }
+  .hand-stage .hand-illustration {
+    height: 215px;
+    width: 175px;
+  }
+  .stage-orbit {
+    top: 20px;
+  }
+  .stage-orbit--two {
+    top: 0;
+  }
+  .recognition-area {
+    min-height: 247px;
+  }
+  .practice-card > .micro-label {
+    margin-top: 34px;
+  }
+  .practice-letter {
+    font-size: 106px;
+  }
+}
+@media (max-width: 1180px) {
+  .sidebar {
+    width: 205px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .main-shell {
+    margin-left: 205px;
+  }
+  .brand-caption {
+    font-size: 9px;
+  }
+  .topbar {
+    padding: 0 26px;
+  }
+  main {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+  .topbar-word {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+  .topbar-actions {
+    gap: 15px;
+  }
+  .topbar-location {
+    gap: 13px;
+  }
+  .workspace-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(258px, 1fr);
+    gap: 16px;
+  }
+  .translation-card,
+  .practice-card {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+  .camera-mode {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+  .quick-guide {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19px 15px;
+  }
+  .guide-intro {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid #e0e7d4;
+    padding-bottom: 14px;
+  }
+  .guide-intro h2 {
+    font-size: 13px;
+  }
+  .guide-intro p {
+    font-size: 11px;
+  }
+  .guide-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .under-camera {
+    width: calc((100% - 16px) * 0.5918);
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .sidebar-about {
+    width: calc(100% + 28px);
+    margin-left: -14px;
+    margin-right: -14px;
+    padding-left: 14px;
+  }
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 960px) {
+  .heading-decoration {
+    display: none;
+  }
+  .topbar-page,
+  .topbar-separator {
+    display: none;
+  }
+  .local-pill {
+    font-size: 11px;
+  }
+  .heading-decoration {
+    margin-right: 0;
+    width: 90px;
+  }
+  .page-heading h1 {
+    font-size: 39px;
+  }
+  .page-heading > div > p {
+    font-size: 13px;
+    max-width: 390px;
+  }
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+  .translation-card {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    column-gap: 25px;
+    padding: 22px;
+  }
+  .translation-card .panel-title {
+    grid-column: 1 / -1;
+    margin-bottom: 12px;
+  }
+  .recognition-area {
+    grid-column: 1;
+    grid-row: 2 / 6;
+    min-height: 190px;
+    border-right: 1px solid #edf0e6;
+    padding-right: 25px;
+  }
+  .transcript-heading {
+    grid-column: 2;
+    padding-top: 8px;
+  }
+  .transcript-box {
+    grid-column: 2;
+    height: 70px;
+  }
+  .transcript-edit {
+    grid-column: 2;
+    margin-bottom: 5px;
+  }
+  .translation-actions {
+    grid-column: 2;
+  }
+  .translation-note {
+    grid-column: 2;
+  }
+  .under-camera {
+    width: 100%;
+  }
+  .practice-card {
+    padding: 25px;
+  }
+  .practice-card > .micro-label {
+    margin-top: 15px;
+  }
+  .practice-card > p {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: unset;
+  }
+  .practice-card > .button {
+    max-width: 280px;
+    display: flex;
+    margin: 0 auto;
+  }
+  .letter-art {
+    height: 130px;
+  }
+  .letter-art .hand-illustration {
+    width: 100px;
+    height: 130px;
+  }
+  .letter-art > span {
+    font-size: 60px;
+    right: 8px;
+  }
+  .section-title h2 {
+    font-size: 15px;
+  }
+  .section-title p {
+    font-size: 11px;
+  }
+  .text-link {
+    font-size: 11px;
+  }
+  .alphabet-layout {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .letter-detail {
+    padding: 25px 0;
+  }
+  .letter-detail h2 {
+    font-size: 26px;
+  }
+  .project-intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .project-documentation {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    gap: 10px;
+  }
+  .stat-card {
+    padding: 18px;
+  }
+  .stat-card > span:last-child {
+    font-size: 11px;
+  }
+  .progress-footer {
+    flex-direction: column;
+  }
+  .progress-row strong {
+    font-size: 12px;
+  }
+}
+@media (max-width: 720px) {
+  .sidebar {
+    visibility: hidden;
+    transform: translateX(-100%);
+    width: 236px;
+    transition: transform 0.2s;
+    box-shadow: 10px 0 40px #162c1410;
+  }
+  .sidebar--open {
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .sidebar-scrim {
+    position: fixed;
+    inset: 0;
+    background: #1d2e1f66;
+    z-index: 35;
+  }
+  .main-shell {
+    margin-left: 0;
+  }
+  .mobile-menu {
+    display: inline-flex !important;
+    margin-left: -6px;
+  }
+  .topbar {
+    padding: 0 22px;
+    height: 63px;
+  }
+  .topbar-location {
+    gap: 9px;
+  }
+  .topbar-actions {
+    gap: 12px;
+  }
+  .local-pill {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+  .help-button {
+    font-size: 11px;
+  }
+  .topbar-word {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  main {
+    padding: 30px 22px 0;
+  }
+  .page-heading {
+    margin-bottom: 28px;
+  }
+  .page-heading h1 {
+    font-size: 41px;
+    letter-spacing: -1.7px;
+    margin-top: 16px;
+  }
+  .page-heading > div > p {
+    font-size: 13px;
+    max-width: 380px;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+  }
+  .workspace-tabs > button {
+    font-size: 13px;
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+  .workspace-caption {
+    font-size: 10px;
+  }
+  .camera-view {
+    height: 416px;
+  }
+  .camera-placeholder h2 {
+    font-size: 22px;
+  }
+  .camera-placeholder p {
+    font-size: 13px;
+  }
+  .camera-placeholder .button {
+    font-size: 14px;
+    min-height: 43px;
+  }
+  .camera-controls {
+    font-size: 13px;
+  }
+  .compact-toggle {
+    font-size: 12px;
+  }
+  .mirror-button {
+    font-size: 12px;
+  }
+  .camera-status {
+    font-size: 12px;
+  }
+  .camera-mode {
+    font-size: 9px;
+  }
+  .under-camera > span,
+  .under-camera > button {
+    font-size: 11px;
+  }
+  .under-camera {
+    gap: 10px;
+  }
+  .translation-card .panel-title h2 {
+    font-size: 15px;
+  }
+  .translation-note {
+    font-size: 10px;
+  }
+  .letter-preview-grid {
+    gap: 10px;
+  }
+  .letter-caption {
+    font-size: 12px;
+    padding: 12px 10px;
+  }
+  .quick-guide {
+    padding: 18px;
+  }
+  .guide-step p {
+    font-size: 10px;
+    white-space: normal;
+  }
+  .guide-step h3 {
+    font-size: 12px;
+    white-space: normal;
+  }
+  .guide-intro h2 {
+    font-size: 14px;
+  }
+  .guide-intro p {
+    font-size: 12px;
+  }
+  .footer {
+    margin-top: 28px;
+  }
+  .footer > span {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .project-intro-copy p,
+  .stack-card > p {
+    font-size: 14px;
+  }
+  .stack-status {
+    font-size: 11px;
+  }
+  .pipeline-step h3 {
+    font-size: 14px;
+  }
+  .pipeline-step p {
+    font-size: 12px;
+  }
+  .glossary dt {
+    font-size: 14px;
+  }
+  .glossary dd {
+    font-size: 14px;
+  }
+  .adr summary strong {
+    font-size: 14px;
+  }
+  .adr > p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px) {
+  main {
+    padding: 26px 17px 0;
+  }
+  .topbar {
+    padding: 0 17px;
+  }
+  .topbar-word {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+  .help-button > span {
+    display: none;
+  }
+  .help-button {
+    width: 26px;
+    height: 34px;
+    justify-content: center;
+  }
+  .topbar-actions {
+    gap: 9px;
+  }
+  .page-heading h1 {
+    font-size: 37px;
+  }
+  .heading-decoration {
+    display: none;
+  }
+  .page-heading > div > p {
+    font-size: 13px;
+    max-width: 310px;
+  }
+  .workspace-caption {
+    display: none;
+  }
+  .workspace-tabs {
+    gap: 15px;
+  }
+  .workspace-tabs > button {
+    font-size: 14px;
+  }
+  .camera-topline {
+    left: 14px;
+    right: 14px;
+  }
+  .camera-mode {
+    font-size: 8px;
+  }
+  .camera-view {
+    height: 410px;
+  }
+  .camera-controls {
+    padding-left: 14px;
+    padding-right: 14px;
+    gap: 13px;
+  }
+  .translation-card {
+    column-gap: 15px;
+    padding: 20px 15px;
+  }
+  .recognition-area {
+    padding-right: 15px;
+  }
+  .recognition-hint {
+    font-size: 9px;
+  }
+  .transcript-box {
+    font-size: 11px;
+    padding: 12px 9px;
+  }
+  .transcript-box--filled {
+    font-size: 17px;
+  }
+  .transcript-edit {
+    gap: 7px;
+  }
+  .transcript-edit > button {
+    font-size: 10px;
+    gap: 3px;
+  }
+  .transcript-edit .clear-text {
+    width: 20px;
+  }
+  .translation-note {
+    font-size: 8px;
+    gap: 3px;
+  }
+  .translation-note svg {
+    width: 12px;
+  }
+  .translation-actions .button {
+    font-size: 11px;
+  }
+  .under-camera {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .under-camera > span,
+  .under-camera > button {
+    font-size: 11px;
+  }
+  .quick-guide {
+    gap: 17px 10px;
+    margin-top: 22px;
+  }
+  .guide-step {
+    gap: 5px;
+  }
+  .guide-step > span {
+    font-size: 16px;
+  }
+  .guide-step h3 {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .guide-step p {
+    font-size: 10px;
+  }
+  .alphabet-preview {
+    margin-top: 29px;
+  }
+  .alphabet-preview .section-title {
+    align-items: flex-end;
+  }
+  .alphabet-preview .section-title h2 {
+    font-size: 14px;
+    max-width: 175px;
+  }
+  .alphabet-preview .section-title p {
+    font-size: 11px;
+    max-width: 180px;
+    line-height: 1.7;
+  }
+  .alphabet-preview .text-link {
+    font-size: 10px;
+    gap: 5px;
+    padding-bottom: 2px;
+  }
+  .alphabet-preview .text-link svg {
+    width: 12px;
+  }
+  .letter-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .letter-art {
+    height: 145px;
+  }
+  .letter-art .hand-illustration {
+    height: 154px;
+    width: 121px;
+  }
+  .footer > span:last-child {
+    font-size: 9px;
+    max-width: 130px;
+    text-align: right;
+    line-height: 1.7;
+  }
+  .footer > span:first-child {
+    font-size: 9px;
+  }
+  .alphabet-library {
+    padding: 20px 15px;
+  }
+  .alphabet-selector {
+    gap: 5px;
+  }
+  .alphabet-selector button {
+    font-size: 14px;
+  }
+  .content-card {
+    padding: 20px 17px;
+  }
+  .progress-row {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .progress-letter {
+    height: 36px;
+    width: 36px;
+  }
+  .progress-row strong {
+    font-size: 12px;
+  }
+  .progress-row > div {
+    min-width: 180px;
+  }
+  .progress-row > .button {
+    margin-left: 37px;
+    padding-left: 10px;
+  }
+  .progress-list .section-title {
+    flex-wrap: wrap;
+  }
+  .stats-grid {
+    gap: 8px;
+  }
+  .stat-card {
+    padding: 14px 11px;
+  }
+  .stat-card > strong {
+    font-size: 46px;
+    padding-top: 8px;
+  }
+  .stat-card > span:last-child {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .stat-icon {
+    top: 12px;
+    right: 9px;
+  }
+  .stat-icon > svg {
+    width: 14px;
+  }
+  .stack-grid {
+    gap: 10px;
+  }
+  .stack-card {
+    padding: 18px 13px;
+  }
+  .stack-card > h3 {
+    font-size: 15px;
+  }
+  .stack-card > p {
+    font-size: 13px;
+  }
+  .stack-status {
+    font-size: 9px;
+  }
+  .project-intro {
+    padding: 22px;
+    gap: 20px;
+  }
+  .pipeline-step {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 10px;
+  }
+  .pipeline-step p {
+    font-size: 10px;
+  }
+  .project-section-title .tag {
+    display: none;
+  }
+  .project-documentation .section-title h2 {
+    font-size: 15px;
+  }
+  .settings-note {
+    padding: 16px 13px;
+    gap: 10px;
+  }
+  .info-banner {
+    padding: 18px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .info-banner strong {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .info-banner p {
+    font-size: 13px;
+  }
+  .help-dialog {
+    padding: 24px;
+  }
+  .help-dialog h2 {
+    font-size: 30px;
+  }
+  .help-dialog > p,
+  .help-steps p {
+    font-size: 14px;
+  }
+  .dialog-note p {
+    font-size: 13px;
+  }
+}
+@media (max-height: 760px) and (min-width: 721px) {
+  .sidebar {
+    padding-top: 24px;
+  }
+  .navigation {
+    margin-top: 30px;
+  }
+  .nav-label--second {
+    margin-top: 23px;
+  }
+  .sidebar-bottom {
+    padding-top: 25px;
+  }
+  .sidebar-note {
+    padding-top: 14px;
+  }
+  .sidebar-note p {
+    font-size: 16px;
+    margin: 8px 0 13px;
+  }
+  .sidebar-about {
+    margin-top: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

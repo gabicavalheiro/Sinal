@@ -1,0 +1,11 @@
+@import "./fonts.css";
+@import "./styles/foundations.css";
+@import "./styles/shell.css";
+@import "./styles/workspace.css";
+@import "./styles/camera.css";
+@import "./styles/translation.css";
+@import "./styles/learning.css";
+@import "./styles/recognition.css";
+@import "./styles/pages.css";
+@import "./styles/overlays.css";
+@import "./styles/responsive.css";

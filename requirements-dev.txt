@@ -1,0 +1,4 @@
+-r services/practice/requirements.txt
+-r services/training/requirements.txt
+httpx==0.28.1
+black==25.1.0
