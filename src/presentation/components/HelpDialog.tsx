@@ -56,9 +56,10 @@ export function HelpDialog({ dialogRef, setHelp }: Props) {
           <div>
             <strong>Explore sem pressa</strong>
             <p>
-              Ative a câmera e mantenha o gesto. A letra aparece quando a previsão fica
-              estável. O reconhecimento é experimental e não cobre letras com movimento. A
-              prática guiada continua com avaliação manual.
+              Ative a câmera e mantenha o gesto. A letra entra no texto quando a previsão
+              fica estável. Para repeti-la, retire a mão por cerca de um segundo. Use
+              Espaço entre palavras. O reconhecimento é experimental e não cobre letras
+              com movimento. A prática guiada continua com avaliação manual.
             </p>
           </div>
         </li>

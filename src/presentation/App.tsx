@@ -14,6 +14,8 @@ import type { AppServices } from "../application/services";
 
 export default function App({ services }: { services: AppServices }) {
   const {
+    automaticWriting,
+    setAutomaticWriting,
     camera,
     copyTranslation,
     currentLetter,
@@ -69,6 +71,8 @@ export default function App({ services }: { services: AppServices }) {
         <main id="main-content">
           {(page === "live" || page === "practice") && (
             <WorkspacePage
+              automaticWriting={automaticWriting}
+              setAutomaticWriting={setAutomaticWriting}
               camera={camera}
               copyTranslation={copyTranslation}
               currentLetter={currentLetter}
@@ -89,7 +93,6 @@ export default function App({ services }: { services: AppServices }) {
               setDemo={setDemo}
               setDemoIndex={setDemoIndex}
               setPreferences={setPreferences}
-              setSelectedLetter={setSelectedLetter}
               setTranslation={setTranslation}
               startCamera={startCamera}
               startDemo={startDemo}

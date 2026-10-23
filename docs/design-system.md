@@ -27,3 +27,11 @@ A prática é manual, sem acerto automático. As contagens persistem localmente;
 Foco visível, nomes acessíveis para ícones, mensagens anunciadas por role=status e aria-live, controles nativos e prefers-reduced-motion. Verde discreto é decorativo; tarefas essenciais usam textos e botões claros. Interface de uma coluna no tablet e celular; painéis de conteúdo se reorganizam por espaço disponível.
 
 A avaliação automatizada e a inspeção visual não substituem testes com pessoas com diferentes capacidades. Revisão adicional de contraste e alvos secundários faz parte da evolução do design system.
+
+## Fluxo de escrita
+
+Câmera e texto são a tarefa principal. Instruções e ajustes ficam em elementos details, inicialmente recolhidos. O alfabeto completo permanece na navegação. A confirmação na câmera é a única indicação da letra atual; o painel lateral apresenta o texto acumulado.
+
+A escrita automática insere cada letra estável uma vez. Para repetir a mesma letra, a mão deve sair do quadro por pelo menos 800 ms. Letras diferentes entram após a confirmação normal do reconhecimento. Espaços são explícitos, pois uma pausa também pode significar troca de gesto. É possível pausar a escrita e inserir letras manualmente. O texto tem limite de 200 caracteres.
+
+O layout usa uma coluna até 1100 px e duas acima disso. Corpo com largura mínima de 320 px; botões de edição têm alvos de toque de pelo menos 44 px.

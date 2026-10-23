@@ -4,6 +4,7 @@ import { useCamera } from "../application/useCamera";
 import { usePractice } from "../application/usePractice";
 import { useRecognition } from "../application/useRecognition";
 import { useStoredState } from "../application/useStoredState";
+import { useAutomaticWriting } from "../application/useAutomaticWriting";
 import { useTranslation } from "../application/useTranslation";
 import type { AppServices } from "../application/services";
 import type { Letter } from "../domain/landmarks";
@@ -13,6 +14,7 @@ import type { Page } from "./navigation";
 import { useTranslationShortcuts } from "./useTranslationShortcuts";
 
 export function useWorkspace(services: AppServices) {
+  const [automaticWriting, setAutomaticWriting] = useState(true);
   const [page, setPage] = useState<Page>("live");
   const [mobileNav, setMobileNav] = useState(false);
   const [help, setHelp] = useState(false);
@@ -56,6 +58,13 @@ export function useWorkspace(services: AppServices) {
     !!camera.landmarks,
   );
 
+  useAutomaticWriting(
+    page === "live" && camera.status === "active" && !demo && automaticWriting,
+    recognition.prediction?.letter,
+    !!camera.landmarks,
+    setTranslation,
+  );
+
   function navigate(next: Page) {
     if (next !== "live" && next !== "practice") {
       camera.stop();
@@ -87,6 +96,8 @@ export function useWorkspace(services: AppServices) {
   const videoWidth = camera.videoRef.current?.videoWidth || 1280;
   const videoHeight = camera.videoRef.current?.videoHeight || 720;
   return {
+    automaticWriting,
+    setAutomaticWriting,
     camera,
     copyTranslation,
     currentLetter,

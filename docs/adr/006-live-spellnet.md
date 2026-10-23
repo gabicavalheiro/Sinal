@@ -14,7 +14,7 @@ A ordem das 21 classes vem de app/video_processing.py do SpellNet: A B C D E F G
 
 Somente realizar inferência com uma mão detectada. Exigir score softmax ≥ 0,80, ao menos três observações concordantes e estabilidade por 650 ms antes de mostrar “Letra X confirmada”. Limpar a indicação ao perder a mão, mudar a classe ou cair abaixo do limiar. A confirmação é temporal; não garante correção linguística e não é uma medição de precisão.
 
-A letra estável pode ser adicionada ao texto por clique ou Enter. A prática guiada continua manual; não muda suas contagens para avaliação automática.
+A letra estável entra automaticamente no texto. A mesma letra só entra novamente após ausência da mão por pelo menos 800 ms; uma previsão instável não libera repetição. A escrita pode ser pausada para inserção manual. Espaço separa palavras. A prática guiada continua manual; não muda suas contagens para avaliação automática.
 
 ## Consequências
 

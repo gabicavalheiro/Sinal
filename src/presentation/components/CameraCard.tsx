@@ -142,11 +142,14 @@ export function CameraCard({
           </>
         )}
       </div>
-      <CameraControls
-        navigate={navigate}
-        preferences={preferences}
-        setPreferences={setPreferences}
-      />
+      <details className="camera-options">
+        <summary>Ajustes da câmera</summary>
+        <CameraControls
+          navigate={navigate}
+          preferences={preferences}
+          setPreferences={setPreferences}
+        />
+      </details>
     </section>
   );
 }

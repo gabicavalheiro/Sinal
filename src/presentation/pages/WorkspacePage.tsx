@@ -1,5 +1,4 @@
 import { ArrowRight, LockKeyhole, Play } from "lucide-react";
-import { AlphabetPreview } from "../components/AlphabetPreview";
 import { CameraCard } from "../components/CameraCard";
 import { PracticePanel } from "../components/PracticePanel";
 import { QuickGuide } from "../components/QuickGuide";
@@ -8,6 +7,8 @@ import { WorkspaceTabs } from "../components/WorkspaceTabs";
 import type { WorkspaceModel } from "../useWorkspace";
 type Props = Pick<
   WorkspaceModel,
+  | "automaticWriting"
+  | "setAutomaticWriting"
   | "camera"
   | "copyTranslation"
   | "currentLetter"
@@ -28,7 +29,6 @@ type Props = Pick<
   | "setDemo"
   | "setDemoIndex"
   | "setPreferences"
-  | "setSelectedLetter"
   | "setTranslation"
   | "startCamera"
   | "startDemo"
@@ -39,6 +39,8 @@ type Props = Pick<
 >;
 
 export function WorkspacePage({
+  automaticWriting,
+  setAutomaticWriting,
   camera,
   copyTranslation,
   currentLetter,
@@ -59,7 +61,6 @@ export function WorkspacePage({
   setDemo,
   setDemoIndex,
   setPreferences,
-  setSelectedLetter,
   setTranslation,
   startCamera,
   startDemo,
@@ -70,50 +71,14 @@ export function WorkspacePage({
 }: Props) {
   return (
     <>
-      <section className="page-heading">
+      <section className="page-heading workspace-heading">
         <div>
-          <div className="eyebrow">
-            <span />
-            {page === "practice"
-              ? "UM POUCO A CADA DIA"
-              : "MAIS CONEXÃO, MENOS BARREIRAS"}
-          </div>
-          <h1>
-            {page === "practice" ? (
-              <>
-                Todo aprendizado começa
-                <br />
-                <em>com a prática.</em>
-              </>
-            ) : (
-              <>
-                A conversa começa
-                <br />
-                <em>com um gesto.</em>
-              </>
-            )}
-          </h1>
+          <h1>{page === "live" ? "Das mãos ao texto." : "Pratique uma letra."}</h1>
           <p>
-            {page === "practice"
-              ? "Escolha uma letra, encontre seu ritmo e celebre cada avanço."
-              : "Explore o alfabeto em Libras. Dê voz às suas mãos, no seu tempo."}
+            {page === "live"
+              ? "Faça o sinal. A letra confirmada entra no texto automaticamente."
+              : "Um sinal de cada vez, no seu ritmo."}
           </p>
-        </div>
-        <div className="heading-decoration" aria-hidden="true">
-          <span>
-            mãos que
-            <br />
-            conectam
-          </span>
-          <svg viewBox="0 0 100 75">
-            <path
-              d="M9 17C37 4 79 13 64 38C53 57 29 47 44 31C58 17 84 35 81 61M70 54L81 64L91 54"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
         </div>
       </section>
       <WorkspaceTabs navigate={navigate} page={page} />
@@ -141,13 +106,12 @@ export function WorkspacePage({
         />
         {page === "live" ? (
           <TranslationPanel
-            camera={camera}
+            automaticWriting={automaticWriting}
+            setAutomaticWriting={setAutomaticWriting}
             copyTranslation={copyTranslation}
             currentLetter={currentLetter}
             demo={demo}
             downloadTranslation={downloadTranslation}
-            recognition={recognition}
-            recognitionMessage={recognitionMessage}
             setTranslation={setTranslation}
             translation={translation}
           />
@@ -180,8 +144,19 @@ export function WorkspacePage({
           </button>
         )}
       </div>
-      <QuickGuide />
-      <AlphabetPreview navigate={navigate} setSelectedLetter={setSelectedLetter} />
+      <details className="workspace-help">
+        <summary>Como usar o reconhecimento</summary>
+        <p>
+          Mantenha o sinal até a confirmação. Para repetir a mesma letra, retire a mão por
+          cerca de um segundo e faça o sinal novamente. Use Espaço entre palavras e Apagar
+          para corrigir.
+        </p>
+        <p>
+          O reconhecimento é experimental e cobre 21 letras estáticas. Ele soletra
+          palavras; não traduz a gramática da Libras.
+        </p>
+        <QuickGuide />
+      </details>
     </>
   );
 }

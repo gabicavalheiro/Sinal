@@ -1,86 +1,64 @@
 import { MAX_TRANSLATION_LENGTH } from "../../application/useTranslation";
-import { ArrowDownToLine, Copy, Eraser, ShieldCheck, Space, Trash2 } from "lucide-react";
+import { ArrowDownToLine, Copy, Eraser, Space, Trash2 } from "lucide-react";
 import { Button, Tag } from "../design-system";
 import type { WorkspaceModel } from "../useWorkspace";
 type Props = Pick<
   WorkspaceModel,
-  | "camera"
+  | "automaticWriting"
+  | "setAutomaticWriting"
   | "copyTranslation"
   | "currentLetter"
   | "demo"
   | "downloadTranslation"
-  | "recognition"
-  | "recognitionMessage"
   | "setTranslation"
   | "translation"
 >;
 
 export function TranslationPanel({
-  camera,
+  automaticWriting,
+  setAutomaticWriting,
   copyTranslation,
   currentLetter,
   demo,
   downloadTranslation,
-  recognition,
-  recognitionMessage,
   setTranslation,
   translation,
 }: Props) {
   return (
     <section className="translation-card" aria-label="Tradução">
       <div className="panel-title">
-        <h2>Sua tradução</h2>
+        <h2>Seu texto</h2>
         <Tag variant={demo ? "orange" : "neutral"}>{demo ? "Exemplo" : "Ao vivo"}</Tag>
       </div>
-      <div className="recognition-area">
-        <span className="micro-label">
-          {demo ? "LETRA DO EXEMPLO" : "LETRA IDENTIFICADA"}
-        </span>
-        <span
-          className={
-            "recognized-letter " + (currentLetter ? "recognized-letter--present" : "")
+      <label className="writing-toggle">
+        <input
+          type="checkbox"
+          checked={automaticWriting}
+          onChange={(event) => setAutomaticWriting(event.target.checked)}
+        />
+        Escrita automática {automaticWriting ? "ativada" : "pausada"}
+      </label>
+      <p className="writing-guidance">
+        {demo
+          ? "Demonstração: adicione uma letra para experimentar."
+          : automaticWriting
+            ? "Para repetir uma letra, retire a mão por 1 segundo."
+            : "Você controla quando cada letra entra no texto."}
+      </p>
+      {currentLetter && (demo || !automaticWriting) && (
+        <button
+          className="add-letter"
+          onClick={() =>
+            setTranslation((text) =>
+              (text + currentLetter).slice(0, MAX_TRANSLATION_LENGTH),
+            )
           }
         >
-          {currentLetter || "—"}
-        </span>
-        <span className="recognition-hint">
-          {demo ? (
-            <>
-              <span className="small-dot" />
-              Exemplo ilustrativo
-            </>
-          ) : camera.status === "active" ? (
-            <>
-              <span
-                className={
-                  recognition.prediction ? "small-dot" : "small-dot small-dot--orange"
-                }
-              />
-              {recognition.prediction
-                ? `Letra ${recognition.prediction.letter} confirmada`
-                : recognitionMessage}
-            </>
-          ) : (
-            <>
-              <span className="small-dot" />
-              Aguardando seu primeiro gesto
-            </>
-          )}
-        </span>
-        {currentLetter && (
-          <button
-            className="add-letter"
-            onClick={() =>
-              setTranslation((t) => (t + currentLetter).slice(0, MAX_TRANSLATION_LENGTH))
-            }
-          >
-            <span>Adicionar letra</span>
-            <kbd>↵</kbd>
-          </button>
-        )}
-      </div>
+          Adicionar {currentLetter}
+        </button>
+      )}
       <div className="transcript-heading">
-        <span>SUAS PALAVRAS</span>
+        <span>TEXTO FORMADO</span>
         <span>{translation.replaceAll(" ", "").length} letras</span>
       </div>
       <div
@@ -91,7 +69,7 @@ export function TranslationPanel({
         {translation || (
           <>
             <span className="text-cursor" />
-            Sua conversa ganha forma aqui.
+            As letras reconhecidas aparecem aqui.
           </>
         )}
       </div>
@@ -139,12 +117,6 @@ export function TranslationPanel({
           <ArrowDownToLine size={17} />
         </button>
       </div>
-      <p className="translation-note">
-        <ShieldCheck size={14} />
-        {camera.status === "active"
-          ? "Reconhecimento experimental · vídeo local."
-          : "Seus gestos ficam só com você."}
-      </p>
     </section>
   );
 }
