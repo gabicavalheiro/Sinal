@@ -35,3 +35,9 @@ Câmera e texto são a tarefa principal. Instruções e ajustes ficam em element
 A escrita automática insere cada letra estável uma vez. Para repetir a mesma letra, a mão deve sair do quadro por pelo menos 800 ms. Letras diferentes entram após a confirmação normal do reconhecimento. Espaços são explícitos, pois uma pausa também pode significar troca de gesto. É possível pausar a escrita e inserir letras manualmente. O texto tem limite de 200 caracteres.
 
 O layout usa uma coluna até 1100 px e duas acima disso. Corpo com largura mínima de 320 px; botões de edição têm alvos de toque de pelo menos 44 px.
+
+## Prática personalizada
+
+A entrada principal tem um campo de nome e uma ação: começar. A navegação fica no topo, com Praticar e Alfabeto; ferramentas adicionais ficam em Mais opções. A sessão mostra uma única letra-alvo, referência fotográfica, câmera e ação de continuidade. Ajuda e atribuição completa da referência usam divulgação progressiva. O resumo aparece apenas ao final.
+
+A referência visual é um recorte do material do IF Baiano, preservando indicações de movimento presentes na figura. O aplicativo não atribui validação institucional a essas referências. Mensagens evitam afirmar erro do usuário quando o detector falha. Resultados são registros da sessão, não indicadores de fluência.

@@ -59,7 +59,8 @@ export function HelpDialog({ dialogRef, setHelp }: Props) {
               Ative a câmera e mantenha o gesto. A letra entra no texto quando a previsão
               fica estável. Para repeti-la, retire a mão por cerca de um segundo. Use
               Espaço entre palavras. O reconhecimento é experimental e não cobre letras
-              com movimento. A prática guiada continua com avaliação manual.
+              com movimento. Na prática do nome, cada letra é confirmada separadamente; as
+              letras sem suporte ficam apenas para observação.
             </p>
           </div>
         </li>

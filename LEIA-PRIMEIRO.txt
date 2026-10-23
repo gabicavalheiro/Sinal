@@ -1,0 +1,60 @@
+ATUALIZAÇÃO: prática personalizada do nome
+Commit: 96bdd871c44bfb55894528dc774c46df8f5f4dd6
+
+Copie o conteúdo desta pasta para a raiz do projeto, preservando os caminhos. Substitua os arquivos existentes e inclua os novos. Não substitua a pasta src inteira: esta entrega contém apenas os arquivos da atualização.
+
+Depois execute: npm run check, npm test e npm run build.
+
+ARQUIVOS SUBSTITUÍDOS (12)
+README.md
+docs/design-system.md
+docs/verification.md
+index.html
+src/presentation/App.tsx
+src/presentation/components/HelpDialog.tsx
+src/presentation/content.ts
+src/presentation/navigation.ts
+src/presentation/pages/AlphabetPage.tsx
+src/presentation/pages/WorkspacePage.tsx
+src/presentation/styles.css
+src/presentation/useWorkspace.ts
+
+ARQUIVOS NOVOS NECESSÁRIOS (38)
+docs/adr/008-name-practice.md
+public/references/SOURCE.txt
+public/references/a.png
+public/references/b.png
+public/references/c.png
+public/references/cedilla.png
+public/references/d.png
+public/references/e.png
+public/references/f.png
+public/references/g.png
+public/references/h.png
+public/references/i.png
+public/references/j.png
+public/references/k.png
+public/references/l.png
+public/references/m.png
+public/references/n.png
+public/references/o.png
+public/references/p.png
+public/references/q.png
+public/references/r.png
+public/references/s.png
+public/references/t.png
+public/references/u.png
+public/references/v.png
+public/references/w.png
+public/references/x.png
+public/references/y.png
+public/references/z.png
+src/application/useNamePractice.ts
+src/domain/namePractice.test.ts
+src/domain/namePractice.ts
+src/presentation/components/LearningHeader.tsx
+src/presentation/components/PracticeCamera.tsx
+src/presentation/components/SignReference.tsx
+src/presentation/pages/LearningProgressPage.tsx
+src/presentation/pages/NamePracticePage.tsx
+src/presentation/styles/journey.css

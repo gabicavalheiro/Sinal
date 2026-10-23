@@ -73,7 +73,9 @@ export function WorkspacePage({
     <>
       <section className="page-heading workspace-heading">
         <div>
-          <h1>{page === "live" ? "Das mãos ao texto." : "Pratique uma letra."}</h1>
+          <h1>
+            {page === "live" ? "Experimente o reconhecimento." : "Pratique uma letra."}
+          </h1>
           <p>
             {page === "live"
               ? "Faça o sinal. A letra confirmada entra no texto automaticamente."

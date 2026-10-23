@@ -32,6 +32,12 @@ export const letterGuides: Record<
 
 export const adrs = [
   {
+    id: "008",
+    title: "Prática do nome como experiência principal",
+    status: "Aceito",
+    body: "Uma letra por vez, com referência do IF Baiano, nova confirmação por etapa e resumo separado entre reconhecimento, revisão e ausência de suporte. Nome somente em memória; lista de revisão no dispositivo. Reconhecimento livre e documentação ficam no menu secundário.",
+  },
+  {
     id: "007",
     title: "Composição explícita e componentes por responsabilidade",
     status: "Aceito",

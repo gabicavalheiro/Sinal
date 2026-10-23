@@ -1,10 +1,10 @@
 import { Footer } from "./components/Footer";
 import { HelpDialog } from "./components/HelpDialog";
-import { Sidebar } from "./components/Sidebar";
+import { LearningHeader } from "./components/LearningHeader";
+import { NamePracticePage } from "./pages/NamePracticePage";
 import { Toast } from "./components/Toast";
-import { TopBar } from "./components/TopBar";
 import { AlphabetPage } from "./pages/AlphabetPage";
-import { ProgressPage } from "./pages/ProgressPage";
+import { LearningProgressPage } from "./pages/LearningProgressPage";
 import { ProjectPage } from "./pages/ProjectPage";
 import { SettingsPage } from "./pages/SettingsPage";
 import { WorkspacePage } from "./pages/WorkspacePage";
@@ -14,6 +14,7 @@ import type { AppServices } from "../application/services";
 
 export default function App({ services }: { services: AppServices }) {
   const {
+    journey,
     automaticWriting,
     setAutomaticWriting,
     camera,
@@ -24,7 +25,6 @@ export default function App({ services }: { services: AppServices }) {
     dialogRef,
     downloadTranslation,
     finishPractice,
-    mobileNav,
     navigate,
     nextPractice,
     page,
@@ -32,20 +32,13 @@ export default function App({ services }: { services: AppServices }) {
     practiceIndex,
     practiceLetter,
     preferences,
-    progress,
     recognition,
     recognitionMessage,
     sampleLetter,
-    selectedLetter,
     setDemo,
     setDemoIndex,
     setHelp,
-    setMobileNav,
-    setPracticeDone,
-    setPracticeIndex,
     setPreferences,
-    setProgress,
-    setSelectedLetter,
     setToast,
     setTranslation,
     startCamera,
@@ -57,18 +50,20 @@ export default function App({ services }: { services: AppServices }) {
     videoWidth,
   } = useWorkspace(services);
   return (
-    <div className="app-shell">
-      {mobileNav && (
-        <button
-          className="sidebar-scrim"
-          aria-label="Fechar menu"
-          onClick={() => setMobileNav(false)}
-        />
-      )}
-      <Sidebar page={page} mobileNav={mobileNav} navigate={navigate} />
+    <div className="app-shell learning-app">
+      <LearningHeader page={page} navigate={navigate} />
       <div className="main-shell">
-        <TopBar page={page} setHelp={setHelp} setMobileNav={setMobileNav} />
         <main id="main-content">
+          {page === "learn" && (
+            <NamePracticePage
+              journey={journey}
+              camera={camera}
+              recognition={recognition}
+              preferences={preferences}
+              startCamera={startCamera}
+              navigate={navigate}
+            />
+          )}
           {(page === "live" || page === "practice") && (
             <WorkspacePage
               automaticWriting={automaticWriting}
@@ -104,22 +99,19 @@ export default function App({ services }: { services: AppServices }) {
           )}
           {page === "alphabet" && (
             <AlphabetPage
-              navigate={navigate}
-              selectedLetter={selectedLetter}
-              setPracticeDone={setPracticeDone}
-              setPracticeIndex={setPracticeIndex}
-              setSelectedLetter={setSelectedLetter}
+              onPractice={(letter) => {
+                journey.start(letter, true);
+                navigate("learn");
+              }}
             />
           )}
           {page === "progress" && (
-            <ProgressPage
-              navigate={navigate}
-              progress={progress}
-              setPracticeDone={setPracticeDone}
-              setPracticeIndex={setPracticeIndex}
-              setProgress={setProgress}
-              setToast={setToast}
-              totalPractice={totalPractice}
+            <LearningProgressPage
+              journey={journey}
+              onReview={() => {
+                journey.start(journey.saved.letters.join(""), true);
+                navigate("learn");
+              }}
             />
           )}
           {page === "project" && <ProjectPage />}
@@ -131,7 +123,7 @@ export default function App({ services }: { services: AppServices }) {
               setToast={setToast}
             />
           )}
-          <Footer />
+          {page !== "learn" && <Footer />}
         </main>
       </div>
       {toast && <Toast setToast={setToast} toast={toast} />}

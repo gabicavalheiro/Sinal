@@ -11,7 +11,7 @@
 
 ## Regressão da arquitetura
 
-Tipos, formatação, build e limites de dependência aprovados. A suíte contém 9 testes de domínio TypeScript e 18 testes Python. Um import proibido foi rejeitado pela verificação de arquitetura.
+Tipos, formatação, build e limites de dependência aprovados. A suíte contém 14 testes de domínio TypeScript e 18 testes Python. Um import proibido foi rejeitado pela verificação de arquitetura.
 
 O roteiro Chromium verificou navegação, diálogo, demonstração, cópia, download, persistência, prática manual, alfabeto, ADRs e preferências. Com MediaPipe e ONNX reais, a sequência A → B → ausência de mão confirmou e limpou as indicações; também foram verificados atalhos e encerramento da captura. Sem erros JavaScript ou envio de frames. Layout sem overflow horizontal em 390, 768, 1024 e 1440 px.
 
@@ -36,3 +36,11 @@ MySQL e SQL Server têm configuração e esquemas, mas não foram iniciados como
 Verificação com MediaPipe e ONNX reais: A → B → ausência de mão → B formou ABB automaticamente. A manutenção do sinal A por dois segundos não duplicou a letra. Pausa da escrita, inclusão manual, espaços, correção, cópia e encerramento da captura aprovados. Layout verificado em 320, 360, 390, 768, 1024 e 1440 px, sem overflow horizontal. Menu móvel e prática manual acessíveis. Nenhum erro JavaScript ou envio de frames no roteiro.
 
 Os três novos testes cobrem composição sem duplicatas, rejeição de perdas breves de rastreamento e repetição após ausência sustentada da mão.
+
+## Prática personalizada
+
+Comandos de arquitetura, tipos, formatação, 14 testes de domínio TypeScript e build aprovados. Os serviços Python não foram alterados nesta etapa; seus 18 testes constam da verificação anterior.
+
+Chromium com MediaPipe e ONNX reais, em stream de Canvas com imagens de referência: sequência AABJ confirmou A, exigiu liberação do gesto para a segunda A, reconheceu B e desligou a câmera ao entrar em J. O resumo registrou três reconhecidas e J sem avaliação. A revisão de letras deixadas para depois persistiu após reload, e o nome não foi persistido. Formulário inválido, modal, referências de 27 letras, navegação ao alfabeto e reconhecimento livre aprovados. Sem erros JavaScript ou envio de frames.
+
+Entrada e sessão verificadas sem overflow horizontal em 320, 360, 390, 768, 1024 e 1440 px. Verificação usa imagens estáticas em um stream; não substitui avaliação com novos usuários e câmera física.

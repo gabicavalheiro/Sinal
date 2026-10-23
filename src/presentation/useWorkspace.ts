@@ -1,6 +1,7 @@
 import { recognitionMessage as describeRecognition } from "./recognitionMessage";
 import { useEffect, useRef, useState } from "react";
 import { useCamera } from "../application/useCamera";
+import { useNamePractice } from "../application/useNamePractice";
 import { usePractice } from "../application/usePractice";
 import { useRecognition } from "../application/useRecognition";
 import { useStoredState } from "../application/useStoredState";
@@ -15,7 +16,7 @@ import { useTranslationShortcuts } from "./useTranslationShortcuts";
 
 export function useWorkspace(services: AppServices) {
   const [automaticWriting, setAutomaticWriting] = useState(true);
-  const [page, setPage] = useState<Page>("live");
+  const [page, setPage] = useState<Page>("learn");
   const [mobileNav, setMobileNav] = useState(false);
   const [help, setHelp] = useState(false);
   const [demo, setDemo] = useState(false);
@@ -25,7 +26,7 @@ export function useWorkspace(services: AppServices) {
   const [preferences, setPreferences] = useStoredState<Preferences>(
     services.storage,
     "sinal.preferences.v1",
-    { points: true, mirror: true },
+    { points: false, mirror: true },
     validPreferences,
   );
   const {
@@ -49,6 +50,11 @@ export function useWorkspace(services: AppServices) {
     camera.landmarks,
     services.createClassifier,
   );
+  const journey = useNamePractice(
+    services.storage,
+    page === "learn" ? recognition.prediction?.letter : undefined,
+    camera.stop,
+  );
   const dialogRef = useRef<HTMLDialogElement>(null);
   const sampleLetter = letters[demoIndex % letters.length];
   const currentLetter = demo ? sampleLetter : recognition.prediction?.letter;
@@ -66,7 +72,7 @@ export function useWorkspace(services: AppServices) {
   );
 
   function navigate(next: Page) {
-    if (next !== "live" && next !== "practice") {
+    if (next !== page) {
       camera.stop();
       setDemo(false);
     }
@@ -96,6 +102,7 @@ export function useWorkspace(services: AppServices) {
   const videoWidth = camera.videoRef.current?.videoWidth || 1280;
   const videoHeight = camera.videoRef.current?.videoHeight || 720;
   return {
+    journey,
     automaticWriting,
     setAutomaticWriting,
     camera,

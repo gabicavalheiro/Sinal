@@ -112,3 +112,9 @@ Pandas valida a tabela. NumPy centraliza as mãos pelo punho, ajusta a escala e 
 SpellNet: [RAIA / SignLink](https://huggingface.co/RAIA-BRASIL/spellnet_libras). A origem, os hashes e os limites estão em public/models/spellnet/manifest.json e no ADR 006. A versão consultada não apresenta licença explícita do modelo; o aviso de origem registra essa ausência. As licenças do ONNX Runtime e das fontes acompanham os arquivos.
 
 As referências A–D são esquemáticas e exigem revisão linguística. O projeto não traduz frases nem substitui ensino de Libras.
+
+## Praticar um nome
+
+A página inicial oferece prática de um nome ou palavra, uma letra por vez. O domínio namePractice valida a entrada, identifica as 21 classes suportadas e distingue letras reconhecidas, deixadas para revisão e sem avaliação. O nome fica em memória. Apenas a lista de revisão e a quantidade de sequências concluídas são gravadas no armazenamento local.
+
+As referências fotográficas de A–Z e Ç vêm de material do IF Baiano; a fonte está em public/references/SOURCE.txt. Cada etapa pede nova confirmação da câmera, inclusive em letras repetidas. Falhas de rastreamento não são classificadas como erro do usuário. O reconhecimento livre permanece no menu secundário.
