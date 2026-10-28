@@ -1,6 +1,7 @@
 import { Footer } from "./components/Footer";
 import { HelpDialog } from "./components/HelpDialog";
-import { LearningHeader } from "./components/LearningHeader";
+import { Sidebar } from "./components/Sidebar";
+import { TopBar } from "./components/TopBar";
 import { NamePracticePage } from "./pages/NamePracticePage";
 import { Toast } from "./components/Toast";
 import { AlphabetPage } from "./pages/AlphabetPage";
@@ -25,6 +26,7 @@ export default function App({ services }: { services: AppServices }) {
     dialogRef,
     downloadTranslation,
     finishPractice,
+    mobileNav,
     navigate,
     nextPractice,
     page,
@@ -38,6 +40,7 @@ export default function App({ services }: { services: AppServices }) {
     setDemo,
     setDemoIndex,
     setHelp,
+    setMobileNav,
     setPreferences,
     setToast,
     setTranslation,
@@ -50,9 +53,13 @@ export default function App({ services }: { services: AppServices }) {
     videoWidth,
   } = useWorkspace(services);
   return (
-    <div className="app-shell learning-app">
-      <LearningHeader page={page} navigate={navigate} />
+    <div className="app-shell">
+      <Sidebar page={page} mobileNav={mobileNav} navigate={navigate} />
+      {mobileNav && (
+        <div className="sidebar-scrim" onClick={() => setMobileNav(false)} />
+      )}
       <div className="main-shell">
+        <TopBar page={page} setHelp={setHelp} setMobileNav={setMobileNav} />
         <main id="main-content">
           {page === "learn" && (
             <NamePracticePage

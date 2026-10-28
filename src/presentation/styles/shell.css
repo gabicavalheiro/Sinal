@@ -6,12 +6,13 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 226px;
+  width: 264px;
   background: #f1f3ec;
   border-right: 1px solid var(--color-border);
-  padding: 31px 20px 0;
+  padding: 31px 20px 22px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   z-index: 40;
 }
 .brand {
@@ -42,15 +43,23 @@
 .brand-period {
   color: var(--color-coral);
 }
-.brand-caption {
-  margin: 13px 0 0 9px;
-  font-size: 8px;
-  letter-spacing: 1.25px;
+.sidebar-mission {
+  margin: 14px 0 0 9px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #5f6e58;
+  max-width: 215px;
+}
+.sidebar-mission strong {
+  color: #2a4a35;
   font-weight: 650;
-  color: #71806d;
 }
 .navigation {
-  margin-top: 48px;
+  margin-top: 30px;
+  overflow-y: auto;
+}
+.nav-group + .nav-group {
+  margin-top: 26px;
 }
 .nav-label {
   margin: 0 0 11px 13px;
@@ -59,139 +68,70 @@
   color: #6d7963;
   font-weight: 650;
 }
-.nav-label--second {
-  margin-top: 32px;
-}
-.navigation nav {
+.nav-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
 .nav-item {
-  min-height: 43px;
   display: flex;
-  align-items: center;
-  gap: 11px;
+  align-items: flex-start;
+  gap: 10px;
   width: 100%;
   padding: 10px 12px;
   text-align: left;
   color: #6a7568;
-  font-size: 13px;
-  border-radius: 7px;
-  font-weight: 500;
+  border-radius: 9px;
 }
-.nav-item svg {
-  stroke-width: 1.6;
+.nav-item-icon {
+  display: flex;
+  margin-top: 1px;
+  color: inherit;
+}
+.nav-item-icon svg {
+  stroke-width: 1.7;
+}
+.nav-item-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.nav-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #35452f;
+}
+.nav-item-desc {
+  font-size: 11px;
+  line-height: 1.45;
+  color: #7c8873;
 }
 .nav-item:hover {
   background: #e7ebdf;
-  color: var(--color-brand-dark);
 }
 .nav-item--active {
   background: #e0e8d6;
+}
+.nav-item--active .nav-item-title {
   color: #2a4a35;
-  font-weight: 650;
 }
 .nav-item--active:hover {
   background: #dbe5cf;
 }
-.nav-active-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #466748;
-  margin-left: auto;
-}
 .sidebar-bottom {
   margin-top: auto;
-  padding-top: 46px;
+  padding-top: 22px;
 }
-.sidebar-note {
-  background: #e7ecdc;
-  border: 1px solid #dfe5d4;
-  border-radius: 9px;
-  padding: 19px 15px 16px;
-  position: relative;
-  overflow: hidden;
-}
-.sidebar-note::after {
-  content: "";
-  width: 86px;
-  height: 86px;
-  border: 1px solid #d5ddc6;
-  border-radius: 50%;
-  position: absolute;
-  top: -37px;
-  right: -37px;
-}
-.note-doodle {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: #7b8861;
-}
-.note-doodle span {
-  font-family: "Instrument Serif", Georgia, serif;
-  font-style: italic;
-  font-size: 15px;
-  transform: rotate(-5deg);
-}
-.sidebar-note p {
-  font-size: 18px;
-  letter-spacing: -0.6px;
-  line-height: 1.4;
-  font-weight: 500;
-  margin: 13px 0 17px;
-  color: #3c5135;
-}
-.sidebar-note button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-  font-size: 12px;
-  font-weight: 650;
-}
-.sidebar-note button:hover {
-  color: #8b583a;
-}
-.sidebar-about {
-  width: calc(100% + 40px);
-  margin: 25px -20px 0;
-  padding: 19px 16px;
+.sidebar-local {
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+  color: #7c8873;
+  padding: 12px 13px 0;
   border-top: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 550;
-}
-.sidebar-about > svg {
-  margin-left: auto;
-  color: #94a08b;
-}
-.sidebar-about small {
-  display: block;
-  font-size: 11px;
-  margin-top: 4px;
-  color: #76836b;
-  font-weight: 400;
-}
-.avatar-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d7dfcd;
-  background: #e8eddf;
-  width: 29px;
-  height: 29px;
-  border-radius: 50%;
-  color: #688062;
 }
 .main-shell {
-  margin-left: 226px;
+  margin-left: 264px;
 }
 .topbar {
   height: 71px;

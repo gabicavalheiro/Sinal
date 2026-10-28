@@ -1,5 +1,3 @@
-import moduleUrl from "@onnx/ort-wasm-simd-threaded.mjs?url";
-import wasmUrl from "@onnx/ort-wasm-simd-threaded.wasm?url";
 import type { Landmark } from "../domain/landmarks";
 import { HAND_CONNECTIONS } from "../domain/landmarks";
 import type { FrameClassifierPort } from "../domain/ports";
@@ -55,7 +53,6 @@ export function prepareFrame(
 export async function createSpellNetClassifier(): Promise<FrameClassifierPort> {
   const ort = await import("onnxruntime-web/wasm");
   ort.env.wasm.numThreads = 1;
-  ort.env.wasm.wasmPaths = { wasm: wasmUrl, mjs: moduleUrl };
   const session = await ort.InferenceSession.create(
     "/models/spellnet/spellnet-libras.onnx",
     { executionProviders: ["wasm"], graphOptimizationLevel: "all" },

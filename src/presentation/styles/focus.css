@@ -105,8 +105,7 @@
   flex-wrap: wrap;
 }
 .camera-mode,
-.workspace-caption,
-.sidebar-note {
+.workspace-caption {
   display: none;
 }
 .sidebar {

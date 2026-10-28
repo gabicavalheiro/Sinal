@@ -42,7 +42,6 @@ services/
   training/        FastAPI, SQL Server, Pandas e NumPy
 scripts/           verificação de arquitetura e conversão do modelo
 docs/              arquitetura, design system, ADRs e glossário
-contracts/         contratos HTTP e CSV
 ```
 
 main.tsx cria a aplicação com os adaptadores de bootstrap/services.ts. Os hooks recebem contratos por parâmetro. As camadas de domínio e aplicação não importam implementações de infraestrutura.
@@ -105,7 +104,6 @@ Pandas valida a tabela. NumPy centraliza as mãos pelo punho, ajusta a escala e 
 - [Arquitetura](docs/architecture.md)
 - [Design system](docs/design-system.md)
 - [Decisões arquiteturais](docs/adr/007-dependency-boundaries.md)
-- [Contratos](contracts/README.md)
 - [Verificação](docs/verification.md)
 - [Glossário](docs/glossary.md)
 

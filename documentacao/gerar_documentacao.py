@@ -5,6 +5,7 @@ from docx.oxml.ns import qn
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from pathlib import Path
+from datetime import datetime, timezone
 
 OUT = Path(__file__).resolve().parent / "Sinal-documentacao-completa.docx"
 doc = Document()
@@ -78,6 +79,10 @@ doc.core_properties.author = "Projeto Sinal"
 doc.core_properties.keywords = (
     "Libras, React, TypeScript, MediaPipe, MySQL, SQL Server, Pandas, NumPy"
 )
+doc.core_properties.comments = ""
+_now = datetime.now(timezone.utc)
+doc.core_properties.created = _now
+doc.core_properties.modified = _now
 
 
 def p(text="", style=None):
@@ -228,9 +233,7 @@ p(
 p(
     "A confirmação significa que a previsão permaneceu estável; não garante correção linguística. O Sinal explora o alfabeto manual e não traduz frases nem a gramática de Libras."
 )
-p(
-    "Referência do código: commit 47a6380e488536b42beb15757301cc95fa7f18f3. Aplicação: https://sinal-libras-lab.candyowlet3.chatgpt.site"
-)
+p("Referência do código: commit 47a6380e488536b42beb15757301cc95fa7f18f3.")
 
 page(2, "Executar e usar o projeto")
 h("O que vem no ZIP")

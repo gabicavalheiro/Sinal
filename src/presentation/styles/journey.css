@@ -1,97 +1,4 @@
 /* The learning journey has one primary action per step. */
-.learning-app {
-  background: #fbfcf9;
-}
-.learning-app .main-shell {
-  margin-left: 0;
-}
-.learning-app main {
-  max-width: 1120px;
-  padding: 36px 32px;
-}
-.learning-header {
-  height: 84px;
-  max-width: 1240px;
-  padding: 0 40px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #e8ece4;
-  gap: 20px;
-}
-.learning-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 30px;
-  letter-spacing: -1.5px;
-  font-weight: 700;
-}
-.learning-brand > svg {
-  color: #f1f5e9;
-  background: #244b3b;
-  box-sizing: content-box;
-  padding: 9px;
-  border-radius: 13px;
-}
-.learning-header nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-.learning-header nav > button {
-  font-size: 13px;
-  color: #6d786d;
-  min-height: 44px;
-}
-.learning-header nav > button[aria-current] {
-  color: #244b3b;
-  font-weight: 650;
-}
-.learning-menu {
-  position: relative;
-}
-.learning-menu summary {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.learning-menu summary::-webkit-details-marker {
-  display: none;
-}
-.learning-menu[open] summary {
-  background: #edf1e7;
-}
-.learning-menu > div {
-  position: absolute;
-  right: 0;
-  top: 50px;
-  width: 246px;
-  padding: 8px;
-  border: 1px solid #e2e8dc;
-  background: white;
-  border-radius: 12px;
-  z-index: 50;
-  box-shadow: 0 12px 32px #1f3c3012;
-}
-.learning-menu button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 12px;
-  min-height: 44px;
-  font-size: 13px;
-  border-radius: 7px;
-}
-.learning-menu button:hover {
-  background: #f0f4e9;
-}
 .journey-welcome {
   max-width: 530px;
   margin: clamp(32px, 8vh, 88px) auto 40px;
@@ -486,29 +393,6 @@
   margin-top: 12px;
 }
 @media (max-width: 720px) {
-  .learning-header {
-    height: 72px;
-    padding: 0 20px;
-    gap: 12px;
-  }
-  .learning-brand {
-    font-size: 27px;
-    gap: 7px;
-  }
-  .learning-brand > svg {
-    width: 22px;
-    height: 22px;
-    padding: 7px;
-  }
-  .learning-header nav {
-    gap: 16px;
-  }
-  .learning-header nav > button {
-    font-size: 12px;
-  }
-  .learning-app main {
-    padding: 24px 20px;
-  }
   .journey-welcome {
     margin: 50px auto 24px;
   }
@@ -571,15 +455,6 @@
   }
 }
 @media (max-width: 380px) {
-  .learning-header {
-    padding: 0 14px;
-  }
-  .learning-header nav {
-    gap: 10px;
-  }
-  .learning-app main {
-    padding: 20px 16px;
-  }
   .journey-welcome h1 {
     font-size: 35px;
   }
@@ -705,8 +580,4 @@
 .journey-task h1:focus,
 .journey-summary h1:focus {
   outline: none;
-}
-.learning-brand,
-.learning-header nav > button {
-  padding: 0;
 }

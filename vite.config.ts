@@ -1,15 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      "@onnx": fileURLToPath(
-        new URL("./node_modules/onnxruntime-web/dist/", import.meta.url),
-      ),
-    },
+  optimizeDeps: {
+    exclude: ["onnxruntime-web"],
   },
-  build: { sourcemap: true },
+  build: { sourcemap: true, target: "esnext" },
 });
